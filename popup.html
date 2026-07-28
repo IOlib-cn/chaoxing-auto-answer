@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+  <title>学习通水课作业自动填答器</title>
+</head>
+<body>
+  <div class="wrap">
+    <h2>📝 学习通水课作业自动填答器</h2>
+    
+    <!-- 答案输入区域 -->
+    <div class="field">
+      <label>答案列表（格式：题号.答案，多行答案连续书写）</label>
+      <textarea id="answerBox" placeholder="示例：
+1.A
+2.B
+31.ABCD
+53.A
+79.只读光盘,可刻录光盘
+95.#include &lt;stdio.h&gt;
+int main() { ... }"></textarea>
+    </div>
+
+    <!-- 延迟设置 -->
+    <div class="field">
+      <label>每题间隔（毫秒）</label>
+      <input type="number" id="delayBox" value="800" min="50" max="5000">
+    </div>
+
+    <!-- 控制按钮 -->
+    <div class="btns">
+      <button id="startBtn" class="btn-start">▶ 开始填充</button>
+      <button id="stopBtn" class="btn-stop" disabled>■ 停止</button>
+    </div>
+
+    <!-- 状态与进度 -->
+    <div class="status">
+      <div id="statusText">状态：准备就绪</div>
+      <div class="bar">
+        <div id="barFill"></div>
+      </div>
+      <div id="progressText">0 / 0</div>
+    </div>
+
+    <p class="warn">仅用于验证浏览器插件操控DOM的能力，不要用来应付学习通的水课作业doge，似乎可以帮同学自动写水课卷子（如果你已知卷子的题库答案的话），嘻嘻</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

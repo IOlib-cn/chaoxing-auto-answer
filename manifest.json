@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "学习通水课作业自动填答器",
+  "version": "1.0.0",
+  "description": "粘贴答案列表一键自动填充学习通试卷中的单选题、多选题、判断题、填空题、简答题、编程大题等。",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "学习通水课作业自动填答器"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
